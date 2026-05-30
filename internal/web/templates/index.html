@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mis tareas ✅</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main>
+    <h1>✅ Mis tareas</h1>
+    <p class="sub">Se guardan en una base de datos: ¡no se borran al cerrar!</p>
+
+    <form class="barra" method="post" action="/add">
+      <input type="text" name="title" placeholder="Nueva tarea..." autocomplete="off" autofocus>
+      <button type="submit">Añadir</button>
+    </form>
+
+    <ul class="lista">
+      {{range .}}
+      <li class="{{if .Done}}hecha{{end}}">
+        <form method="post" action="/toggle/{{.ID}}" class="marcar">
+          <button type="submit" title="Marcar">{{if .Done}}✅{{else}}⬜{{end}}</button>
+        </form>
+        <span class="titulo">{{.Title}}</span>
+        <form method="post" action="/delete/{{.ID}}" class="borrar">
+          <button type="submit" title="Borrar">🗑️</button>
+        </form>
+      </li>
+      {{else}}
+      <li class="vacio">No hay tareas. ¡Añade la primera!</li>
+      {{end}}
+    </ul>
+  </main>
+</body>
+</html>
