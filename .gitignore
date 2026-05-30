@@ -1,0 +1,4 @@
+/todo-go
+*.db
+*.test
+.DS_Store
