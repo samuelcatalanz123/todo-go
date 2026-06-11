@@ -1,5 +1,9 @@
 # Lista de tareas (Go + SQLite)
 
+[![CI](https://github.com/samuelcatalanz123/todo-go/actions/workflows/ci.yml/badge.svg)](https://github.com/samuelcatalanz123/todo-go/actions/workflows/ci.yml)
+![Go](https://img.shields.io/badge/Go-1.26-00ADD8?logo=go&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 App web de tareas (to-do) que **guarda los datos en una base de datos SQLite**,
 así que persisten al cerrar y reabrir. Hecha en **Go**. Demuestra el **CRUD**
 completo (Crear, Leer, Actualizar, Borrar).
